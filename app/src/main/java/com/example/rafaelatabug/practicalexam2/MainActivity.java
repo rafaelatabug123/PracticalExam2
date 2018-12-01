@@ -41,16 +41,12 @@ public class MainActivity extends AppCompatActivity {
                 String str_num2 = examNumber2.getText().toString();
                 int num1 = Integer.parseInt(str_num1);
                 int num2 = Integer.parseInt(str_num2);
-                int sum = num1 + num2;
-                int average = sum/2;
-                viewAverage.setText(Integer.toString(average));
+                int sum = (num1 + num2)/2;
+
+                viewAverage.setText(Integer.toString(sum));
             }
         });
 
-
-    }
-
-    public void saveData(View v){
         String fName = firstName.getText().toString();
         String lName = lastName.getText().toString();
         String average = viewAverage.getText().toString();
@@ -61,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         writer.putString("Average", average);
         writer.commit();
         Toast.makeText(this,"Data is saved...",Toast.LENGTH_LONG).show();
+
+    }
+
+    public void saveData(View v){
 
 
     }
